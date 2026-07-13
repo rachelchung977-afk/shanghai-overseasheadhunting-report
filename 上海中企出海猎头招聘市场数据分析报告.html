@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上海中企出海猎头招聘市场数据分析报告</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #1a1a2e;
+    background: #f5f6fa;
+  }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #1565c0 100%);
+    color: #fff;
+    padding: 80px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    bottom: -80px; left: 40%;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .cover-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #e3f2fd;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+  .cover h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 span {
+    color: #90caf9;
+  }
+  .cover-sub {
+    font-size: 15px;
+    color: #bbdefb;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 24px;
+  }
+  .cover-meta-item label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #90caf9;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .cover-meta-item span {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* KPI bar */
+  .kpi-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .kpi-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 18px;
+    border-left: 4px solid #1565c0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .kpi-card .kpi-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1565c0;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .kpi-card .kpi-label {
+    font-size: 12px;
+    color: #607d8b;
+    line-height: 1.4;
+  }
+  .kpi-card:nth-child(2) { border-left-color: #0288d1; }
+  .kpi-card:nth-child(2) .kpi-value { color: #0288d1; }
+  .kpi-card:nth-child(3) { border-left-color: #00838f; }
+  .kpi-card:nth-child(3) .kpi-value { color: #00838f; }
+  .kpi-card:nth-child(4) { border-left-color: #2e7d32; }
+  .kpi-card:nth-child(4) .kpi-value { color: #2e7d32; }
+  .kpi-card:nth-child(5) { border-left-color: #6a1b9a; }
+  .kpi-card:nth-child(5) .kpi-value { color: #6a1b9a; }
+  .kpi-card:nth-child(6) { border-left-color: #e65100; }
+  .kpi-card:nth-child(6) .kpi-value { color: #e65100; }
+  .kpi-card:nth-child(7) { border-left-color: #c62828; }
+  .kpi-card:nth-child(7) .kpi-value { color: #c62828; }
+
+  /* TOC */
+  .toc {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8eaf6;
+  }
+  .toc ol {
+    padding-left: 20px;
+  }
+  .toc li {
+    padding: 4px 0;
+    font-size: 14px;
+  }
+  .toc a {
+    color: #1565c0;
+    text-decoration: none;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  /* Sections */
+  .section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e8eaf6;
+  }
+  .section-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1565c0, #283593);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a237e;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #283593;
+    margin: 24px 0 12px;
+    padding-left: 10px;
+    border-left: 3px solid #1565c0;
+  }
+
+  p {
+    margin-bottom: 12px;
+    color: #37474f;
+  }
+
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 14px;
+  }
+  li {
+    margin-bottom: 6px;
+    color: #37474f;
+  }
+
+  strong {
+    color: #1a237e;
+    font-weight: 600;
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead tr {
+    background: linear-gradient(90deg, #1a237e, #283593);
+    color: #fff;
+  }
+  thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(even) { background: #f3f4f9; }
+  tbody tr:nth-child(odd)  { background: #fff; }
+  tbody tr:hover { background: #e8eaf6; transition: background 0.15s; }
+  tbody td {
+    padding: 11px 16px;
+    border-bottom: 1px solid #e8eaf6;
+    vertical-align: top;
+  }
+
+  /* Company cards */
+  .company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .company-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .company-card-header {
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+  }
+  .cgl-header    { background: linear-gradient(90deg, #1565c0, #1976d2); }
+  .lloyd-header  { background: linear-gradient(90deg, #00695c, #00897b); }
+  .intelli-header{ background: linear-gradient(90deg, #6a1b9a, #7b1fa2); }
+  .company-card-body {
+    padding: 16px 20px;
+    background: #fff;
+  }
+  .company-card-body .tag {
+    display: inline-block;
+    background: #e8eaf6;
+    color: #1a237e;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin: 2px 2px 8px 0;
+    font-weight: 600;
+  }
+  .info-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .info-row .info-label {
+    color: #90a4ae;
+    white-space: nowrap;
+    min-width: 70px;
+  }
+  .info-row .info-val { color: #37474f; }
+  .pro-con {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  .pro-con .pro { color: #2e7d32; margin-bottom: 4px; }
+  .pro-con .con { color: #c62828; }
+
+  /* Region cards */
+  .region-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .region-card {
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+  }
+  .region-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e8eaf6;
+  }
+  .region-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .badge-green  { background: #e8f5e9; color: #2e7d32; }
+  .badge-orange { background: #fff3e0; color: #e65100; }
+  .badge-blue   { background: #e3f2fd; color: #1565c0; }
+  .region-card p { font-size: 13px; margin-bottom: 6px; }
+
+  /* Job rank */
+  .job-rank {
+    counter-reset: job;
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0;
+  }
+  .job-rank li {
+    counter-increment: job;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .job-rank li::before {
+    content: counter(job);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1565c0, #283593);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .job-rank .job-title { font-weight: 700; color: #1a237e; font-size: 14px; margin-bottom: 4px; }
+  .job-rank .job-salary { color: #e65100; font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .job-rank .job-note { font-size: 13px; color: #607d8b; }
+
+  /* Risk cards */
+  .risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .risk-card {
+    border-radius: 10px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-top: 3px solid #ef5350;
+  }
+  .risk-card:nth-child(2) { border-top-color: #ff9800; }
+  .risk-card:nth-child(3) { border-top-color: #ffc107; }
+  .risk-card:nth-child(4) { border-top-color: #78909c; }
+  .risk-card h4 { font-size: 14px; font-weight: 700; color: #1a237e; margin-bottom: 10px; }
+  .risk-card ul { font-size: 13px; padding-left: 16px; }
+  .risk-card li { margin-bottom: 4px; color: #546e7a; }
+
+  /* Recommendations */
+  .rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .rec-card {
+    background: linear-gradient(135deg, #e8eaf6 0%, #fff 100%);
+    border: 1px solid #c5cae9;
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .rec-card .rec-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: #c5cae9;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .rec-card h4 { font-size: 14px; font-weight: 700; color: #1a237e; margin-bottom: 8px; }
+  .rec-card p  { font-size: 13px; color: #546e7a; }
+
+  /* Trend bar */
+  .trend-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .trend-label { width: 180px; color: #37474f; flex-shrink: 0; }
+  .trend-bar-wrap { flex: 1; background: #e8eaf6; border-radius: 4px; height: 8px; }
+  .trend-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #1565c0, #42a5f5); }
+  .trend-now  { width: 130px; text-align: right; color: #607d8b; }
+  .trend-2027 { width: 130px; text-align: right; color: #1565c0; font-weight: 600; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    color: #90a4ae;
+    font-size: 12px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid #e8eaf6; margin: 20px 0; }
+
+  @media (max-width: 640px) {
+    .cover { padding: 48px 24px 36px; }
+    .cover h1 { font-size: 22px; }
+    .section { padding: 24px 18px; }
+    .company-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <div class="cover-tag">Market Intelligence Report</div>
+  <h1>上海中企出海<span>猎头招聘市场</span><br>数据分析报告</h1>
+  <p class="cover-sub">竞争格局 · 人才需求 · 薪酬趋势 · 战略建议</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>报告日期</label>
+      <span>2026年7月13日</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>研究范围</label>
+      <span>上海地区中国企业出海猎头招聘市场</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>数据来源</label>
+      <span>行业报告、招聘平台数据、企业公开信息、媒体报道</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- KPI Bar -->
+<div class="kpi-bar">
+  <div class="kpi-card">
+    <div class="kpi-value">329亿元</div>
+    <div class="kpi-label">中国猎头行业整体规模（2025年）</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">21%</div>
+    <div class="kpi-label">猎企出海业务占比（2025年），预计2026年突破30%</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">84亿美元</div>
+    <div class="kpi-label">2026年全球海外人才招聘市场规模预测</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">23.16%</div>
+    <div class="kpi-label">上海猎头新发职位占全国比例（全国第一）</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">3,800家</div>
+    <div class="kpi-label">上海注册猎头机构数量</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">38,968元</div>
+    <div class="kpi-label">出海岗位平均月薪（2024年，同比+22.7%）</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">+38.41%</div>
+    <div class="kpi-label">出海岗位同比增速（2025年前三季度）</div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>目录</h2>
+  <ol>
+    <li><a href="#s1">执行摘要</a></li>
+    <li><a href="#s2">市场整体格局</a></li>
+    <li><a href="#s3">竞争格局分析：头部玩家深度画像</a></li>
+    <li><a href="#s4">人才需求结构与薪酬水平</a></li>
+    <li><a href="#s5">猎头服务定价体系</a></li>
+    <li><a href="#s6">区域市场差异（东南亚 / 欧美 / 中东非洲）</a></li>
+    <li><a href="#s7">挑战与风险</a></li>
+    <li><a href="#s8">2025-2027年趋势展望</a></li>
+    <li><a href="#s9">战略建议</a></li>
+  </ol>
+</div>
+
+<!-- Section 1 -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <h2>执行摘要</h2>
+  </div>
+  <p>上海中企出海猎头招聘市场正处于历史性扩张窗口。在"千帆出海"政策加码、制造业外迁压力与中企全球化战略深化三重驱动下，出海招聘需求从2023年起进入爆发期，2025年出海职位同比增长38.41%，出海岗位平均月薪同比上涨22.7%。</p>
+  <p>上海凭借跨国公司总部集聚（1,060家）、国际人才储备深厚、金融与贸易基础设施完善，是中企出海高端管理人才输出的第一枢纽。</p>
+
+  <h3>关键数据一览</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>指标</th><th>数值</th></tr></thead>
+      <tbody>
+        <tr><td>中国猎头行业整体规模（2025年）</td><td>约329亿元</td></tr>
+        <tr><td>猎企出海业务占比（2025年）</td><td>约21%，预计2026年突破30%</td></tr>
+        <tr><td>2026年全球海外人才招聘市场规模预测</td><td>约84亿美元</td></tr>
+        <tr><td>上海猎头新发职位占全国比例</td><td>23.16%（全国第一）</td></tr>
+        <tr><td>上海注册猎头机构数量</td><td>约3,800家</td></tr>
+        <tr><td>出海岗位平均月薪（2024年）</td><td>38,968元（同比+22.7%）</td></tr>
+        <tr><td>出海岗位同比增速（2025年前三季度）</td><td>+38.41%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Section 2 -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <h2>市场整体格局</h2>
+  </div>
+
+  <h3>2.1 市场规模与增长</h3>
+  <p>中国猎头行业整体规模2025年约为329亿元，出海业务是当前增速最快的细分赛道：</p>
+  <ul>
+    <li>猎企出海业务占比从2022年不足7%，飙升至2025年的21%</li>
+    <li>2026年预计突破30%</li>
+    <li>2023年出海招聘职位同比增长40.41%，2024年数字科技出海职位增长43.97%</li>
+    <li>2025年前三季度出海职位同比增长38.41%</li>
+  </ul>
+  <p>从全球视角来看，2026年全球海外人才招聘市场规模预计达84亿美元，中国企业是其中增速最快的需求方。</p>
+
+  <h3>2.2 驱动因素</h3>
+  <p><strong>政策驱动：</strong></p>
+  <ul>
+    <li>"一带一路"持续推进，共建国家基础设施与产业合作提供持续人才需求</li>
+    <li>"双循环"战略鼓励企业向外寻找增量市场</li>
+    <li>2024年"千帆出海行动"进一步加码，政策信号明确</li>
+  </ul>
+  <p><strong>产业压力驱动：</strong></p>
+  <ul>
+    <li>国内市场内卷加剧，中下游制造业向越南、墨西哥、东南亚转移</li>
+    <li>新能源、半导体、消费电子等行业龙头主动布局全球供应链</li>
+    <li>跨境电商快速扩张，TikTok Shop、Temu、Shein等平台带动大规模本地化招聘</li>
+  </ul>
+  <p><strong>企业战略驱动：</strong></p>
+  <ul>
+    <li>出海已从"产品出海"（1.0）演进至"能力出海"（4.0），即输出管理体系、品牌与研发能力</li>
+    <li>中企全球化管理层配置需求从"派驻"转向"本地招募+外派管理"混合模式</li>
+    <li>"不出海就出局"成为制造业、科技行业的市场共识</li>
+  </ul>
+
+  <h3>2.3 上海的核心地位</h3>
+  <p>上海是中国出海猎头业务的第一中心：</p>
+  <ul>
+    <li>猎头新发职位占全国23.16%，居全国首位</li>
+    <li>浦东新区集中全市76.8%的猎头业务</li>
+    <li>注册猎头机构约3,800家</li>
+    <li>在沪设立地区总部或亚太总部的跨国公司达1,060家</li>
+  </ul>
+  <p>与北京、深圳对比：北京在国企央企出海及政府关联项目上更具优势；深圳在科技硬件出海（消费电子、新能源）方面最为集中；上海的优势在于外资猎头聚集度高、国际化人才储备最为深厚、对欧美市场的出海高端管理人才输出能力最强。</p>
+
+  <h3>2.4 主要行业分布</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>行业</th><th>出海招聘特征</th><th>增速</th></tr></thead>
+      <tbody>
+        <tr><td>新能源（含电动车、储能）</td><td>出海招聘占比第一（8.83%）</td><td>高速</td></tr>
+        <tr><td>电子/半导体</td><td>增速最快，+89.89%</td><td>极速</td></tr>
+        <tr><td>跨境电商</td><td>数字科技出海中占比最高（13.13%）</td><td>高速</td></tr>
+        <tr><td>汽车/机械制造</td><td>欧洲布局加速，管理层薪酬涨幅超50%</td><td>稳健</td></tr>
+        <tr><td>游戏/泛娱乐</td><td>东南亚、中东市场扩张活跃</td><td>中速</td></tr>
+        <tr><td>AI/人工智能</td><td>海外工程师需求预计2025-2027增长150%</td><td>爆发期</td></tr>
+        <tr><td>生物医药</td><td>欧美法规市场进入门槛高，高端人才极稀缺</td><td>稳健</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2.5 市场结构</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>代表企业</th><th>市场份额估算</th><th>定位特征</th></tr></thead>
+      <tbody>
+        <tr><td>国际顶级猎头</td><td>Korn Ferry、Heidrick &amp; Struggles、Spencer Stuart</td><td>约16%</td><td>CXO级、保留金制、重在品牌背书</td></tr>
+        <tr><td>综合型本土大猎企</td><td>科锐国际、万宝盛华</td><td>约25-30%</td><td>全服务线、体量大、RPO能力强</td></tr>
+        <tr><td>专注出海的垂直猎头</td><td>CGL、IntelliPro、智乐聘、HelloCareer</td><td>5%向15%+快速攀升</td><td>聚焦出海场景、定价更贴近中企</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>当前市场高度分散，无绝对领导者，专注出海的垂直玩家增速最快，是市场份额的主要增量获取方。</p>
+</div>
+
+<!-- Section 3 -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <h2>竞争格局分析：头部玩家深度画像</h2>
+  </div>
+
+  <div class="company-grid">
+    <!-- CGL -->
+    <div class="company-card">
+      <div class="company-card-header cgl-header">CGL（德筑集团）</div>
+      <div class="company-card-body">
+        <span class="tag">出海定位最纯粹</span>
+        <span class="tag">合伙人制驱动</span>
+        <span class="tag">猎聘生态加持</span>
+        <div class="info-row"><span class="info-label">成立时间</span><span class="info-val">2018年</span></div>
+        <div class="info-row"><span class="info-label">总部</span><span class="info-val">上海</span></div>
+        <div class="info-row"><span class="info-label">员工规模</span><span class="info-val">770+人，107位合伙人</span></div>
+        <div class="info-row"><span class="info-label">股东背景</span><span class="info-val">猎聘集团（港股6100）战略投资</span></div>
+        <div class="info-row"><span class="info-label">重大变化</span><span class="info-val">创始人庄华2025年5月因病离世，进入后创始人时代</span></div>
+        <div class="info-row"><span class="info-label">核心战略</span><span class="info-val">2025年全策略"all-in出海"，聚焦中高端猎头及出海管理人才配置</span></div>
+        <div class="pro-con">
+          <div class="pro"><strong>优势：</strong>出海品牌认知度高；合伙人制吸引资深顾问；猎聘数据平台支持</div>
+          <div class="con"><strong>挑战：</strong>创始人离世后管理层稳定性存不确定性；欧洲网络尚在建设期</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lloyd Morgan -->
+    <div class="company-card">
+      <div class="company-card-header lloyd-header">Lloyd Morgan</div>
+      <div class="company-card-body">
+        <span class="tag">30年品牌背书</span>
+        <span class="tag">嘉驰生态</span>
+        <span class="tag">出海专项团队成熟</span>
+        <div class="info-row"><span class="info-label">入华历史</span><span class="info-val">30周年（2025年）</span></div>
+        <div class="info-row"><span class="info-label">当前归属</span><span class="info-val">嘉驰国际（X-GIANTS）旗下子品牌（2020年收购）</span></div>
+        <div class="info-row"><span class="info-label">平台规模</span><span class="info-val">近1,000名顾问，100家分支机构</span></div>
+        <div class="info-row"><span class="info-label">出海团队</span><span class="info-val">由Kitty Shen领衔的全球化专项团队</span></div>
+        <div class="info-row"><span class="info-label">服务线</span><span class="info-val">中高端猎头、灵活用工、RPO</span></div>
+        <div class="pro-con">
+          <div class="pro"><strong>优势：</strong>30年在华品牌积淀；嘉驰平台提供充足资源；出海专项团队已成熟</div>
+          <div class="con"><strong>挑战：</strong>垂直出海赛道独特性认知弱于CGL；大平台整合背景下定制化响应需提升</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IntelliPro -->
+    <div class="company-card">
+      <div class="company-card-header intelli-header">IntelliPro（英特利普）</div>
+      <div class="company-card-body">
+        <span class="tag">EOR合规最强</span>
+        <span class="tag">硅谷基因</span>
+        <span class="tag">科技大厂首选</span>
+        <div class="info-row"><span class="info-label">成立时间</span><span class="info-val">2009年</span></div>
+        <div class="info-row"><span class="info-label">总部</span><span class="info-val">美国硅谷（加州）</span></div>
+        <div class="info-row"><span class="info-label">近期增速</span><span class="info-val">员工增速37.5%，头部玩家中最快</span></div>
+        <div class="info-row"><span class="info-label">核心壁垒</span><span class="info-val">持有美国IRS认证PEO执照，EOR/HRO合规雇佣能力行业最强</span></div>
+        <div class="info-row"><span class="info-label">代表客户</span><span class="info-val">Google、Meta、字节跳动、阿里巴巴</span></div>
+        <div class="info-row"><span class="info-label">战略合作</span><span class="info-val">与LinkedIn形成战略合作</span></div>
+        <div class="pro-con">
+          <div class="pro"><strong>优势：</strong>PEO执照构建高门槛合规壁垒；硅谷基因强于本土猎头；科技客户背书强</div>
+          <div class="con"><strong>挑战：</strong>上海本地团队规模相对有限；东南亚和中东覆盖较弱</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>3.4 其他重要玩家</h3>
+  <ul>
+    <li><strong>科锐国际（Career International）：</strong>营收规模约145亿元，中国最大综合性人力资源服务商。RPO和灵活用工体量最大，出海猎头非核心定位，在高端猎头赛道受到专注型玩家的压力。</li>
+    <li><strong>Korn Ferry / Heidrick &amp; Struggles / Spencer Stuart（国际顶级三强）：</strong>专注CXO级保留金制搜寻，费率30%-35%，客户为世界500强及大型跨国企业，本地化能力相对不足。</li>
+    <li><strong>万宝盛华（Manpower Group）：</strong>灵活用工和外包业务体量大，出海猎头业务深度有限，以中间层管理人才为主。</li>
+    <li><strong>新兴垂直出海猎头（智乐聘、HelloCareer等）：</strong>成功付费模式，费率18%-25%，专注东南亚、中东等新兴市场，规模小但增速快。</li>
+  </ul>
+
+  <h3>3.5 竞争格局总结矩阵</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>维度</th><th>CGL</th><th>Lloyd Morgan</th><th>IntelliPro</th><th>国际三强</th><th>科锐国际</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>出海专注度</td><td>极高</td><td>中高</td><td>高（北美）</td><td>中</td><td>中</td></tr>
+        <tr><td>上海团队规模</td><td>中大</td><td>中</td><td>中</td><td>小精</td><td>大</td></tr>
+        <tr><td>欧美市场能力</td><td>一般</td><td>中</td><td>强</td><td>极强</td><td>中</td></tr>
+        <tr><td>东南亚市场能力</td><td>中</td><td>中</td><td>弱</td><td>弱</td><td>中</td></tr>
+        <tr><td>EOR/合规能力</td><td>中</td><td>中</td><td>极强</td><td>中</td><td>中</td></tr>
+        <tr><td>中企文化理解</td><td>强</td><td>强</td><td>中</td><td>弱</td><td>强</td></tr>
+        <tr><td>服务费率</td><td>20-28%</td><td>20-25%</td><td>22-30%</td><td>30-35%</td><td>15-22%</td></tr>
+        <tr><td>主要客户类型</td><td>中企出海</td><td>中外资均有</td><td>科技大厂</td><td>跨国大型企业</td><td>大型企业全类型</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Section 4 -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <h2>人才需求结构与薪酬水平</h2>
+  </div>
+
+  <h3>4.1 高需求岗位排行（极度紧缺 Top 5）</h3>
+  <ul class="job-rank">
+    <li>
+      <div>
+        <div class="job-title">海外区域销售总监 / 大区总经理</div>
+        <div class="job-salary">月薪 50,000-90,000元 / 年薪 80-300万元（顶级岗位可达500万元以上，含股权）</div>
+        <div class="job-note">紧缺原因：兼具中企文化理解、海外本地网络和行业经验的人才极为稀缺</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="job-title">本地化运营负责人</div>
+        <div class="job-salary">月薪 20,000-45,000元</div>
+        <div class="job-note">需双语能力+海外生活工作经验，纯国内背景候选人匹配率不足</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="job-title">跨境供应链总监</div>
+        <div class="job-salary">月薪 40,000-70,000元</div>
+        <div class="job-note">通常需要10年以上经验，对具体出海目的地的供应链有实际操作背景</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="job-title">海外HR负责人</div>
+        <div class="job-salary">月薪 25,000-50,000元（视目的地国家差异较大）</div>
+        <div class="job-note">紧缺程度最高：当地劳动法合规+中企HR管理经验的复合型人才极罕见</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="job-title">跨境合规 / 法务专家</div>
+        <div class="job-salary">月薪 25,000-50,000元</div>
+        <div class="job-note">负责GDPR、当地劳动法、进出口合规等，随出海规范化要求提升需求快速增长</div>
+      </div>
+    </li>
+  </ul>
+
+  <h3>4.2 候选人典型画像</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>要求维度</th><th>东南亚出海岗位</th><th>欧美出海岗位</th><th>中东/非洲出海岗位</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>语言要求</td><td>英语+小语种（泰/越/印尼语等）</td><td>英语（流利）+当地语言优先</td><td>阿拉伯语/法语优先</td></tr>
+        <tr><td>工作经验</td><td>5-10年，有东南亚驻外经验</td><td>8-15年，有欧美留学或工作背景</td><td>5-10年，有海湾国家工作经验</td></tr>
+        <tr><td>国际化背景</td><td>有驻外项目经验即可</td><td>通常需要海外学历或任职</td><td>有海外驻外经验</td></tr>
+        <tr><td>中企文化理解</td><td>强需求</td><td>中等需求</td><td>强需求（国企出海为主）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>4.3 薪酬溢价幅度（相较国内同类岗位）</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>目的地市场</th><th>管理层薪酬溢价</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td>欧洲</td><td>50%-80%</td><td>汽车/工业出海管理层涨幅最明显</td></tr>
+        <tr><td>北美</td><td>40%-70%</td><td>科技行业薪酬最高</td></tr>
+        <tr><td>中东</td><td>20%-50%</td><td>免税薪酬结构增加实际吸引力</td></tr>
+        <tr><td>东南亚</td><td>10%-30%</td><td>生活成本补贴是主要溢价来源</td></tr>
+        <tr><td>非洲</td><td>15%-35%</td><td>驻外补贴是核心激励手段</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>具备双文化背景（深度理解中企文化+扎根海外市场）的管理者，相较单一背景候选人可获得额外<strong>40%-60%的薪酬溢价</strong>。出海销售类岗位绩效奖金通常占总薪酬30%-50%，部分制造业出海销售岗位OTE（目标总收入）可达基薪的2倍。</p>
+</div>
+
+<!-- Section 5 -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <h2>猎头服务定价体系</h2>
+  </div>
+
+  <h3>5.1 费率结构</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>服务提供方类型</th><th>服务定位</th><th>典型费率（年薪比例）</th></tr></thead>
+      <tbody>
+        <tr><td>国际顶级猎头（Korn Ferry / Heidrick等）</td><td>CXO级，保留金制</td><td>30%-35%</td></tr>
+        <tr><td>综合型本土大猎企（科锐等）</td><td>总监至VP级</td><td>15%-22%</td></tr>
+        <tr><td>中高端出海专注猎头（CGL / Lloyd Morgan等）</td><td>总监至VP级</td><td>20%-28%</td></tr>
+        <tr><td>IntelliPro类合规猎头</td><td>科技类总监至高管</td><td>22%-30%</td></tr>
+        <tr><td>新兴垂直出海猎头（智乐聘等）</td><td>中层至总监级</td><td>18%-25%（成功付费为主）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5.2 典型成交案例参考</h3>
+  <ul>
+    <li>年薪80万元海外销售总监：猎头费约20万元（25%费率）</li>
+    <li>年薪200万元北美区CEO：猎头费约60万-70万元（30%-35%费率）</li>
+    <li>年薪50万元东南亚运营总监：猎头费约10万-12.5万元（20%-25%费率）</li>
+  </ul>
+
+  <h3>5.3 定价趋势</h3>
+  <ul>
+    <li>出海猎头整体费率高于国内同层级岗位约3-5个百分点，反映供给稀缺的溢价</li>
+    <li>中企专属垂直猎头以"成功付费+低于国际猎头"定价策略抢占中小出海企业市场</li>
+    <li>EOR/PEO一体化服务（如IntelliPro模式）将猎头费和合规雇主费用打包，客户综合成本更透明</li>
+  </ul>
+</div>
+
+<!-- Section 6 -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <h2>区域市场差异分析</h2>
+  </div>
+
+  <div class="region-grid">
+    <div class="region-card">
+      <h4>东南亚方向</h4>
+      <span class="region-badge badge-green">招聘量最大</span>
+      <p><strong>特征：</strong>制造业、运营类岗位为主；小语种（泰语、越南语、印尼语）人才需求强劲；成本相对较低，是出海猎头业务量的主要来源。</p>
+      <p><strong>挑战：</strong>候选人匹配度不足50%（语言+驻外经验双重门槛）；各国合规要求碎片化。</p>
+      <p><strong>机会：</strong>制造业持续转移，长期需求有结构性支撑；越南、印尼、泰国正在形成本地人才供给的初级生态。</p>
+    </div>
+    <div class="region-card">
+      <h4>欧美方向</h4>
+      <span class="region-badge badge-blue">薪酬最高</span>
+      <p><strong>特征：</strong>合规门槛最高（GDPR等）；管理层薪酬最高，猎头费绝对值最大；本地网络和品牌认知是进入壁垒。</p>
+      <p><strong>挑战：</strong>候选人稀缺；中企文化需经过本地化适配。</p>
+      <p><strong>机会：</strong>汽车、新能源中企欧洲布局持续深化（比亚迪、宁德时代等）；AI和半导体中企北美布局加速。</p>
+    </div>
+    <div class="region-card">
+      <h4>中东 / 非洲方向</h4>
+      <span class="region-badge badge-orange">人才极稀缺</span>
+      <p><strong>中东：</strong>免税薪酬结构对候选人吸引力强；阿拉伯语人才极度稀缺；基建和能源项目驱动；数字化转型科技需求快速增长。</p>
+      <p><strong>非洲：</strong>以国有企业工程项目为主；驻外补贴是核心激励手段；候选人驻外意愿低。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 7 -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <h2>挑战与风险</h2>
+  </div>
+
+  <div class="risk-grid">
+    <div class="risk-card">
+      <h4>人才供给侧瓶颈</h4>
+      <ul>
+        <li>高端出海人才总量不足：复合型人才是全市场最稀缺资源</li>
+        <li>顶级候选人对出海机会持谨慎态度，家庭、子女教育、医疗等是核心顾虑</li>
+        <li>东南亚小语种人才短缺：国内高校输出供不应求</li>
+      </ul>
+    </div>
+    <div class="risk-card">
+      <h4>合规与法律风险</h4>
+      <ul>
+        <li>各目的地国劳动法差异巨大，中企HR普遍缺乏应对能力</li>
+        <li>GDPR等数据隐私要求和本地雇佣比例增加用工成本</li>
+        <li>猎头机构在海外从事招聘业务的执照要求因国而异</li>
+      </ul>
+    </div>
+    <div class="risk-card">
+      <h4>市场竞争加剧</h4>
+      <ul>
+        <li>赛道进入者持续增加，中小机构低价竞争拉低整体收费水平</li>
+        <li>国际猎头本地化能力持续提升，对中高端市场形成竞争压力</li>
+        <li>AI工具普及压缩中间层岗位的猎头价值</li>
+      </ul>
+    </div>
+    <div class="risk-card">
+      <h4>地缘政治与宏观风险</h4>
+      <ul>
+        <li>中美关系走向影响北美出海招聘的政策环境</li>
+        <li>部分市场反华情绪影响中企品牌在候选人端的吸引力</li>
+        <li>汇率波动影响跨境薪酬结构的实际吸引力</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Section 8 -->
+<div class="section" id="s8">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <h2>2025-2027年趋势展望</h2>
+  </div>
+
+  <h3>8.1 市场规模预测</h3>
+  <ul>
+    <li>出海猎头业务占比：2025年约21% → 2026年预计突破30% → 2027年或达40%</li>
+    <li>出海职位年增速预计维持30%-40%高位</li>
+    <li>出海猎头市场将出现首批营收规模超过10亿元的专注型出海猎头机构</li>
+  </ul>
+
+  <h3>8.2 需求结构变化</h3>
+  <ul>
+    <li>岗位类型从"销售前线"单一需求，向研发、生产运营、本地合规全职能扩展</li>
+    <li>AI/ML工程师出海需求预计2025-2027年增长150%</li>
+    <li>高管层（VP级以上）出海配置需求将快速提升，推动高端猎头费用总额增长</li>
+  </ul>
+
+  <h3>8.3 关键竞争要素预判</h3>
+  <p style="font-size:13px;color:#607d8b;margin-bottom:12px;">重要性对比：当前 vs 2027年</p>
+
+  <div class="trend-row">
+    <span class="trend-label">出海目的地本地人才网络</span>
+    <div class="trend-bar-wrap"><div class="trend-bar" style="width:90%"></div></div>
+    <span class="trend-now">当前：高</span>
+    <span class="trend-2027">2027：极高</span>
+  </div>
+  <div class="trend-row">
+    <span class="trend-label">EOR/合规雇佣能力</span>
+    <div class="trend-bar-wrap"><div class="trend-bar" style="width:85%"></div></div>
+    <span class="trend-now">当前：中高</span>
+    <span class="trend-2027">2027：极高</span>
+  </div>
+  <div class="trend-row">
+    <span class="trend-label">AI技术赋能候选人匹配</span>
+    <div class="trend-bar-wrap"><div class="trend-bar" style="width:60%"></div></div>
+    <span class="trend-now">当前：低</span>
+    <span class="trend-2027">2027：高</span>
+  </div>
+  <div class="trend-row">
+    <span class="trend-label">中企客户深度服务能力</span>
+    <div class="trend-bar-wrap"><div class="trend-bar" style="width:80%"></div></div>
+    <span class="trend-now">当前：高</span>
+    <span class="trend-2027">2027：高</span>
+  </div>
+  <div class="trend-row">
+    <span class="trend-label">多区域（非单一目的地）覆盖</span>
+    <div class="trend-bar-wrap"><div class="trend-bar" style="width:70%"></div></div>
+    <span class="trend-now">当前：中</span>
+    <span class="trend-2027">2027：高</span>
+  </div>
+</div>
+
+<!-- Section 9 -->
+<div class="section" id="s9">
+  <div class="section-header">
+    <div class="section-num">9</div>
+    <h2>战略建议</h2>
+  </div>
+
+  <h3>对出海猎头机构</h3>
+  <div class="rec-grid">
+    <div class="rec-card">
+      <div class="rec-num">01</div>
+      <h4>聚焦1-2个高价值目的地深度建网</h4>
+      <p>分散资源覆盖全球不如在东南亚某一市场或欧洲某一国家建立真正的本地候选人网络，形成稀缺壁垒。</p>
+    </div>
+    <div class="rec-card">
+      <div class="rec-num">02</div>
+      <h4>投资合规能力建设</h4>
+      <p>EOR/PEO能力已成为出海猎头的核心竞争壁垒，与专业合规服务商合作或自建团队是必选项。</p>
+    </div>
+    <div class="rec-card">
+      <div class="rec-num">03</div>
+      <h4>强化行业垂直化</h4>
+      <p>聚焦新能源、半导体或跨境电商等增速最快的出海行业，形成行业人才数据库护城河。</p>
+    </div>
+    <div class="rec-card">
+      <div class="rec-num">04</div>
+      <h4>差异化定价策略</h4>
+      <p>针对中小出海企业采用成功付费+竞争性费率；针对大型出海企业提供保留金制高端搜寻，覆盖不同客群。</p>
+    </div>
+  </div>
+
+  <h3>对中企出海HR负责人</h3>
+  <div class="rec-grid">
+    <div class="rec-card">
+      <div class="rec-num">01</div>
+      <h4>提前布局人才储备</h4>
+      <p>出海高端人才搜寻周期通常为3-6个月，应在业务落地前6-12个月启动猎寻。</p>
+    </div>
+    <div class="rec-card">
+      <div class="rec-num">02</div>
+      <h4>优选有目的地本地网络的猎头</h4>
+      <p>平台型大猎头不等于当地资源强，应重点核查猎头在目标市场的本地候选人覆盖能力。</p>
+    </div>
+    <div class="rec-card">
+      <div class="rec-num">03</div>
+      <h4>将EOR/合规需求纳入选择标准</h4>
+      <p>一体化服务降低后续合规风险和管理成本，选择猎头时应将合规能力列为核心评估维度。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Appendix -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num" style="background:linear-gradient(135deg,#546e7a,#78909c);">附</div>
+    <h2>数据来源说明</h2>
+  </div>
+  <p>本报告数据来源包括但不限于：猎聘集团年度报告、智联招聘数据研究院、BOSS直聘研究院、中国人力资源服务业数据报告、Hays亚太薪酬指南、嘉驰国际/Lloyd Morgan公开信息、CGL官方公告、IntelliPro官网及LinkedIn披露信息、各主要猎头机构媒体报道及行业分析机构研究成果。</p>
+  <p>部分市场规模数据为行业估算，具体数值因数据来源口径不同存在差异，建议结合业务实际情况参考使用。</p>
+</div>
+
+<div class="footer">
+  <p>本报告为辅助分析参考，不构成商业决策的唯一依据，建议结合一手市场调研进行验证。</p>
+  <p style="margin-top:6px;">报告日期：2026年7月13日</p>
+</div>
+
+</div><!-- /container -->
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1a61c5efa1edd9c',t:'MTc4MzkyMjg4Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
